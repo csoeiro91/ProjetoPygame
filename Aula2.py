@@ -19,9 +19,6 @@ class HomemAranha(Sprite): #criamos o primeiro sprint que irá compor o jogo, o 
         self.image = load('images/homemaranha_small.png') #carrego a imagem e em seguida tranfiro para uma variável.
         self.rect = self.image.get_rect() #uso a função get_rect na imagem, onde irá me permitir o movimento no plano.
 
-    def Update(self):
-        print("teste")
-
 class Teia(Sprite): #criamos o segundo sprint que irá compor o jogo.
     def __init__(self, x, y):
         super().__init__()
@@ -30,9 +27,6 @@ class Teia(Sprite): #criamos o segundo sprint que irá compor o jogo.
         self.rect = self.image.get_rect(
             center=(x, y)
         )
-
-    def Update(self):
-        print("teste")
 
 class Inimigo(Sprite): #criamos o segundo sprint que irá compor o jogo.
     def __init__(self):
@@ -43,17 +37,12 @@ class Inimigo(Sprite): #criamos o segundo sprint que irá compor o jogo.
             center=(800, randint(20, 580)) #retorna posição aleatoria.
         )
 
-    def Update(self):
-        print("teste")
-
 # Espaço do display
 homem_aranha = HomemAranha()
-grupo_inimigos = Group()
-grupo_homemaranha = Group()
 grupo_geral = GroupSingle(homem_aranha)
 
 
 while True:
      superficie.blit(fundo, (0, 0)) #Faço o Bit Blit na imagem no ponto 0,0 do plano definimo, com isso consigo inserir a imagem no jogo.
-     grupo_geral.draw(superficie)
+     grupo_geral.draw(superficie)  #Desenhar o objeto no plano
      display.update()  # a função update atualiza os frames.
