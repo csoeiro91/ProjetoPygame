@@ -78,14 +78,6 @@ grupo_geral = GroupSingle(homem_aranha)
 grupo_inimigo.add(Inimigo())
 
 while True:
-    # Espaço dos eventos
-    for evento in event.get():  # Events
-        if evento.type == QUIT:
-            pygame.quit()
-
-        if evento.type == KEYUP:
-            if evento.key == K_SPACE:
-                print("teste")
 
      superficie.blit(fundo, (0, 0)) #Faço o Bit Blit na imagem no ponto 0,0 do plano definimo, com isso consigo inserir a imagem no jogo.
      grupo_geral.draw(superficie)  #Desenhar o objeto no plano
@@ -95,5 +87,13 @@ while True:
      grupo_geral.update()
      grupo_inimigo.update()
      grupo_aranha.update()
+
+     for evento in event.get():  # Events
+         if evento.type == QUIT:
+             pygame.quit()
+
+         if evento.type == KEYUP:
+             if evento.key == K_SPACE:
+                 homem_aranha.soltarTeia()
 
      display.update()  # a função update atualiza os frames.
