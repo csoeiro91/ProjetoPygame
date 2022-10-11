@@ -18,7 +18,7 @@ class HomemAranha(Sprite): #criamos o primeiro sprint que irá compor o jogo, o 
         super().__init__() #defino essa função será usada em outras classes como herança.
 
         self.image = load('images/homemaranha_small.png') #carrego a imagem e em seguida tranfiro para uma variável.
-        self.rect = self.image.get_rect(center=(tamanho)) #uso a função get_rect na imagem, onde irá me permitir o movimento no plano.
+        self.rect = self.image.get_rect() #uso a função get_rect na imagem, onde irá me permitir o movimento no plano.
         self.velocidade = 4
 
     def update(self):
